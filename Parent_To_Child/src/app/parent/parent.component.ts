@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-parent',
@@ -6,6 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./parent.component.scss']
 })
 export class ParentComponent {
-
+  @Output() newItemEvent = new EventEmitter<string>();
   MyName = "Shehan Rusiru Senanayake";
+
+
+  addItem(value: any){
+    this.newItemEvent.emit(value);
+  }
 }

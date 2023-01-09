@@ -9,11 +9,16 @@ import { Component, Input } from '@angular/core';
 export class ChildComponent {
  
   @Input() name: string;
+  names = [''];
 
   constructor(){
     this.name = "";
-    //console.log();
-   // alert(this.name);
+  
+  }
+
+  addItem(newName: any)
+  {
+    this.names.push(newName);
   }
 
 }
