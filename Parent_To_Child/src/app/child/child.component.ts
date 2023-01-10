@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-child',
@@ -9,16 +9,18 @@ import { Component, Input } from '@angular/core';
 export class ChildComponent {
  
   @Input() name: string;
-  names = [''];
+  @Output() newNameEvent = new EventEmitter<string>();
+
+  private Typed_names = "";
 
   constructor(){
     this.name = "";
-  
   }
 
-  addItem(newName: any)
-  {
-    this.names.push(newName);
+
+
+  addItem(value: any) {
+    this.newNameEvent.emit(value);
   }
 
 }

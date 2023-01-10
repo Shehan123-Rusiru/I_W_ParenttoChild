@@ -1,4 +1,5 @@
-import { Component, Output, EventEmitter } from '@angular/core';
+import { Component} from '@angular/core';
+
 
 @Component({
   selector: 'app-parent',
@@ -6,11 +7,23 @@ import { Component, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./parent.component.scss']
 })
 export class ParentComponent {
-  @Output() newItemEvent = new EventEmitter<string>();
-  MyName = "Shehan Rusiru Senanayake";
+
+ // @Output() newItemEvent = new EventEmitter<string>(); // 
+
+  public MyName = "";
+  public NewName= "";
+  
 
 
-  addItem(value: any){
-    this.newItemEvent.emit(value);
-  }
+  showItems(newName: any){
+     this.NewName = newName;
+   }
+
+     // addItem(newName: string)
+  // {
+  //   this.Typed_names.push(newName);
+  // }
+  
+   
+  
 }
